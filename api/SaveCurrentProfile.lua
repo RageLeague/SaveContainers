@@ -14,7 +14,7 @@ function Containers.SaveCurrentProfile(id, forced_save)
         return false
     end
     print(string.format("Saving to save (%s)...", id))
-    Containers.CopyProfile(Containers.path, Containers.path .. Containers.folder .. "/" .. id .. "/")
+    Containers.CopyProfile("", Containers.folder .. "/" .. id .. "/")
     local f = io.open(Containers.path .. Containers.folder .. "/" .. id .. "/info.lua", "w")
     local info = {
         name = "Container",

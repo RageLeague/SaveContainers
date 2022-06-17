@@ -10,5 +10,6 @@ function Containers.LoadProfile(id)
     end
     Containers.CopyProfile(Containers.folder .. "/" .. id .. "/", "")
     print("Profile successfully loaded")
+    engine.inst:Reset()
     return true
 end

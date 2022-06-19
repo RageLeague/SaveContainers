@@ -6,6 +6,12 @@ local function ProfilesMenu( screen )
 
     local t = {}
 
+    for i, id, data in sorted_pairs(Containers.ListProfiles()) do
+        table.insert(t,  {txt = data.name or "", fn = function()
+
+        end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = Widget.AdvancedMenuButton })
+    end
+
     table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW", fn = function()
 
     end, icon = engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), buttonclass = Widget.AdvancedMenuButton })

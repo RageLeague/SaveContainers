@@ -1,7 +1,17 @@
+local filepath = require "util/filepath"
 
 local function OnLoad( mod )
     rawset(_G, "CURRENT_MOD_ID", mod.id)
     require "SAVE_CONTAINERS:api"
+
+    for k, filepath in ipairs( filepath.list_files( "SAVE_CONTAINERS:ui/", "*.lua", true )) do
+        local name = filepath:match( "(.+)[.]lua$" )
+        -- print(name)
+        if name then
+            require(name)
+        end
+    end
+
 end
 
 return {

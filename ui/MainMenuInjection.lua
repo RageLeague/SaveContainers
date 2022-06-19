@@ -7,9 +7,13 @@ local function ProfilesMenu( screen )
     local t = {}
 
     for i, id, data in sorted_pairs(Containers.ListProfiles()) do
-        table.insert(t,  {txt = data.name or "", fn = function()
+        local tooltip = string.format("Created on: %s\n\nUpdated on: %s",
+            data.time_created and tostring( os.date( "%x %X", data.time_created )) or LOC "CONTAINERS.NA",
+            data.last_saved and tostring( os.date( "%x %X", data.last_saved )) or LOC "CONTAINERS.NA")
 
-        end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = Widget.AdvancedMenuButton })
+        table.insert(t,  {txt = data.name or "", hover_text = tooltip, fn = function()
+
+        end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = ContainerClass.HoverableMenuButton })
     end
 
     table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW", fn = function()

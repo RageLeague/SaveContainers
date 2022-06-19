@@ -16,7 +16,7 @@ function Containers.SaveCurrentProfile(id, forced_save, data)
         return false
     end
     if exists then
-        local ok, result = xpcall( require, generic_error, string.format("%s%s/%s/info.lua", Container.path, Containers.folder, id) )
+        local ok, result = xpcall( require, generic_error, string.format("%s%s/%s/info", Containers.path, Containers.folder, id) )
         if not ok then
             print(result)
             info = {

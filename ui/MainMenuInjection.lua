@@ -6,7 +6,14 @@ local function ProfilesMenu( screen )
 
     local t = {}
 
-    table.insert(t,  {txt = LOC"UI.MAINMENU.BACK", fn = function() AUDIO:PlayEvent("event:/ui/main/gen/back_general") screen:PopMenu() end, icon = engine.asset.Texture("UI/ic_mainmenu_back.tex"), buttonclass = Widget.AdvancedMenuButton })
+    table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW", fn = function()
+
+    end, icon = engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), buttonclass = Widget.AdvancedMenuButton })
+
+    table.insert(t,  {txt = LOC"UI.MAINMENU.BACK", fn = function()
+        AUDIO:PlayEvent("event:/ui/main/gen/back_general")
+        screen:PopMenu()
+    end, icon = engine.asset.Texture("UI/ic_mainmenu_back.tex"), buttonclass = Widget.AdvancedMenuButton })
 
     return t
 end

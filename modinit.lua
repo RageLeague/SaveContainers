@@ -2,6 +2,7 @@ local filepath = require "util/filepath"
 
 local function OnLoad( mod )
     rawset(_G, "CURRENT_MOD_ID", mod.id)
+    require "SAVE_CONTAINERS:strings"
     require "SAVE_CONTAINERS:api"
 
     for k, filepath in ipairs( filepath.list_files( "SAVE_CONTAINERS:ui/", "*.lua", true )) do

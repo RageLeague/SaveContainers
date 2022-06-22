@@ -16,8 +16,27 @@ local function ProfilesMenu( screen )
         end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = ContainerClass.HoverableMenuButton })
     end
 
-    table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW", fn = function()
-
+    table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW.OPT", fn = function()
+        UIHelpers.EditString(
+            LOC "CONTAINERS.CREATE_NEW.TITLE",
+            LOC "CONTAINERS.CREATE_NEW.DESC",
+            LOC "CONTAINERS.CREATE_NEW.SAMPLE",
+            function( val )
+                if val then
+                    if val ~= "" then
+                        local result = Containers.SaveCurrentProfile(nil, true, {name = val})
+                        if result then
+                            TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.CREATE_NEW.SUCCESS_DESC", val) ) )
+                        else
+                            TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.CREATE_NEW.FAILURE_DESC") ) )
+                        end
+                    else
+                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.CREATE_NEW.REQ_NAME") ) )
+                    end
+                    -- screen:PopMenu()
+                end
+            end
+        )
     end, icon = engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), buttonclass = Widget.AdvancedMenuButton })
 
     table.insert(t,  {txt = LOC"UI.MAINMENU.BACK", fn = function()

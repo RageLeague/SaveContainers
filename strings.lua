@@ -13,5 +13,6 @@ Content.AddStringTable("SAVE_CONTAINERS", {
         NA = "N/A",
         SUCCESS = "Success!",
         FAILURE = "Failure!",
+        MANAGE_CONTAINERS = "Manage Containers",
     },
 })

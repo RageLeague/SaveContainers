@@ -12,7 +12,16 @@ local function ProfilesMenu( screen )
             data.last_saved and tostring( os.date( "%x %X", data.last_saved )) or LOC "CONTAINERS.NA")
 
         table.insert(t,  {txt = data.name or "", hover_text = tooltip, fn = function()
+            TheGame:FE():PushScreen( ContainerClass.MultiOptPopup(
+                data.name or "",
+                "What would you like to do with it?",
+                {"Cancel", "Load", "Save", "Delete", "Rename"} ) )
+                :SetFn( function(v)
+                    if v == 0 then
 
+                    end
+
+                end )
         end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = ContainerClass.HoverableMenuButton })
     end
 
@@ -54,7 +63,7 @@ function MainMenu:init(...)
     local did_injection = false
     MainMenu.ShouldSkipExternalLinks = function(self, ...)
         if not did_injection and self.link_buttons then
-            self.profiles_link = self.link_buttons:AddChild( Widget.MainMenuButton( engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), "???", function()
+            self.profiles_link = self.link_buttons:AddChild( Widget.MainMenuButton( engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), LOC"CONTAINERS.MANAGE_CONTAINERS", function()
                 if self:GetCurrentMenu() ~= ProfilesMenu then
                     if not self:IsMenuStart() then self:PopMenu() end
                     self:PushMenu( ProfilesMenu )

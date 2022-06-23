@@ -17,8 +17,21 @@ local function ProfilesMenu( screen )
                 "What would you like to do with it?",
                 {"Cancel", "Load", "Save", "Delete", "Rename"} ) )
                 :SetFn( function(v)
-                    if v == 0 then
+                    if v == 2 then
+                        -- Load
+                        TheGame:FE():PushScreen( Screen.YesNoPopup( LOC"CONTAINERS.LOAD.TITLE", LOC"CONTAINERS.LOAD.DESC" ) )
+                            :SetFn( function(v)
+                                if v == Screen.YesNoPopup.YES then
+                                    local result = Containers.LoadProfile(id)
+                                    if result then
+                                        -- The game will reset anyway, so don't show a popup.
+                                        -- TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.CREATE_NEW.SUCCESS_DESC", val) ) )
+                                    else
+                                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.LOAD.FAILURE_DESC") ) )
+                                    end
+                                end
 
+                            end )
                     end
 
                 end )

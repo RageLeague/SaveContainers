@@ -1,5 +1,5 @@
 function Containers.CopyProfile(copy_address, target_address)
-    local save_paths = Containers.GetSavableFiles()
+    local save_paths = Containers.GetSavableFiles(copy_address)
     for i, path in ipairs(save_paths) do
         local load_path = Containers.path .. copy_address .. path
         local save_path = Containers.path .. target_address .. path
@@ -9,8 +9,11 @@ function Containers.CopyProfile(copy_address, target_address)
             f:close()
 
             f = io.open(save_path, "w")
-            f:write(data)
-            f:close()
+            if f then
+                f:write(data)
+                f:close()
+                print("Copied " .. load_path .. " to " .. save_path)
+            end
         end
     end
 end

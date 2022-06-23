@@ -25,16 +25,16 @@ end
 function Containers.GetSavableFiles(root)
     root = root or ""
     local files = {
-        root .. "input_settings.lua",
-        root .. "profile.lua",
-        root .. "run_history.lua",
-        root .. "stats.lua"
+        "input_settings.lua",
+        "profile.lua",
+        "run_history.lua",
+        "stats.lua"
     }
 
     local function OnListFiles( filenames )
         for k, t in pairs( filenames ) do
             local save_name = t.name
-            table.insert(files, root .. "saves/" .. save_name)
+            table.insert(files, "saves/" .. save_name)
         end
     end
     Containers.settings:ListFiles( root .. "saves/*", OnListFiles )

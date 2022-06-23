@@ -10,6 +10,12 @@ Content.AddStringTable("SAVE_CONTAINERS", {
             FAILURE_DESC = "Fail to save container.",
             REQ_NAME = "The container needs a name!",
         },
+        LOAD = {
+            TITLE = "Confirm Load",
+            DESC = "Your current profile will forever be lost if you haven't saved it yet. Additionally, once the container is loaded, the game will be reset.\n\nAre you sure you want to load this container?",
+
+            FAILURE_DESC = "Fail to load container.",
+        },
         NA = "N/A",
         SUCCESS = "Success!",
         FAILURE = "Failure!",

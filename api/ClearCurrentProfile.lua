@@ -21,4 +21,5 @@ function Containers.DeleteProfile(id)
         -- Dangerous stuff
         local result = os.execute(command)
     end
+    return true
 end

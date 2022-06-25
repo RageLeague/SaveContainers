@@ -34,8 +34,30 @@ local function ProfilesMenu( screen )
                             end )
                     elseif v == 3 then
                         -- Override save
+                        TheGame:FE():PushScreen( Screen.YesNoPopup( LOC"CONTAINERS.SAVE.TITLE", LOC"CONTAINERS.SAVE.DESC" ) )
+                        :SetFn( function(v)
+                            if v == Screen.YesNoPopup.YES then
+                                local result = Containers.SaveCurrentProfile(id, true)
+                                if result then
+                                    TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.SAVE.SUCCESS_DESC") ) )
+                                else
+                                    TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.SAVE.FAILURE_DESC") ) )
+                                end
+                            end
+                        end )
                     elseif v == 4 then
                         -- Delete
+                        TheGame:FE():PushScreen( Screen.YesNoPopup( LOC"CONTAINERS.DELETE.TITLE", LOC"CONTAINERS.DELETE.DESC" ) )
+                            :SetFn( function(v)
+                                if v == Screen.YesNoPopup.YES then
+                                    local result = Containers.DeleteProfile(id)
+                                    if result then
+                                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.DELETE.SUCCESS_DESC") ) )
+                                    else
+                                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.DELETE.FAILURE_DESC") ) )
+                                    end
+                                end
+                            end )
                     elseif v == 5 then
                     end
 
@@ -51,7 +73,7 @@ local function ProfilesMenu( screen )
             function( val )
                 if val then
                     if val ~= "" then
-                        local result = Containers.SaveCurrentProfile(nil, true, {name = val})
+                        local result = Containers.SaveCurrentProfile(nil, false, {name = val})
                         if result then
                             TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.CREATE_NEW.SUCCESS_DESC", val) ) )
                         else

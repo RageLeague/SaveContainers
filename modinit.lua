@@ -23,5 +23,5 @@ return {
     OnLoad = OnLoad,
 
     title = "Save Containers",
-    description = "Allows you to create multiple profiles. Call \"Containers.Help()\" in the console for how to use it.",
+    description = "Allows you to create multiple profiles.",
 }

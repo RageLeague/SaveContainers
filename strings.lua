@@ -1,7 +1,7 @@
 Content.AddStringTable("SAVE_CONTAINERS", {
     CONTAINERS = {
         CREATE_NEW = {
-            OPT = "Create New Container...",
+            OPT = "New Container...",
             TITLE = "Name New Container",
             DESC = "Enter a name to help you identify the profile.",
             SAMPLE = "New Container",
@@ -9,6 +9,10 @@ Content.AddStringTable("SAVE_CONTAINERS", {
             SUCCESS_DESC = "Container saved as \"{1}\".",
             FAILURE_DESC = "Failed to save container.",
             REQ_NAME = "The container needs a name!",
+        },
+        SELECT_CONTAINER = {
+            DESC = "What would you like to do with it?",
+            TOOLTIP = "Created on: %s\n\nUpdated on: %s\n\nTotal runs: %d",
         },
         LOAD = {
             TITLE = "Confirm Load",
@@ -32,6 +36,9 @@ Content.AddStringTable("SAVE_CONTAINERS", {
             SUCCESS_DESC = "Successfully deleted container.",
             FAILURE_DESC = "Failed to delete container.",
             OPT = "Delete",
+        },
+        RENAME = {
+            OPT = "Rename",
         },
         NA = "N/A",
         SUCCESS = "Success!",

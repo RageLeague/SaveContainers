@@ -2,20 +2,38 @@ local MainMenu = Screen.MainMenu
 
 local old_init_menu = MainMenu.init
 
+local function ContainerDescFn(id, data)
+    local ok, result = pcall( require, Containers.path .. Containers.folder .. "/" .. id .. "/run_history" )
+    local run_history, run_count
+    if ok then
+        run_history = result
+        run_count = run_history and run_history.history and #run_history.history
+    end
+    local tooltip = string.format(LOC"CONTAINERS.SELECT_CONTAINER.TOOLTIP",
+        data.time_created and tostring( os.date( "%x %X", data.time_created )) or LOC "CONTAINERS.NA",
+        data.last_saved and tostring( os.date( "%x %X", data.last_saved )) or LOC "CONTAINERS.NA",
+        run_count or 0)
+    return tooltip
+end
+
 local function ProfilesMenu( screen )
 
     local t = {}
 
     for i, id, data in sorted_pairs(Containers.ListProfiles()) do
-        local tooltip = string.format("Created on: %s\n\nUpdated on: %s",
-            data.time_created and tostring( os.date( "%x %X", data.time_created )) or LOC "CONTAINERS.NA",
-            data.last_saved and tostring( os.date( "%x %X", data.last_saved )) or LOC "CONTAINERS.NA")
+        local tooltip = ContainerDescFn(id, data)
 
         table.insert(t,  {txt = data.name or "", hover_text = tooltip, fn = function()
             TheGame:FE():PushScreen( ContainerClass.MultiOptPopup(
                 data.name or "",
-                "What would you like to do with it?",
-                {"Cancel", "Load", "Save", "Delete", "Rename"} ) )
+                LOC"CONTAINERS.SELECT_CONTAINER.DESC",
+                {
+                    LOC"UI.DIALOGS.CANCEL",
+                    LOC"CONTAINERS.LOAD.OPT",
+                    LOC"CONTAINERS.SAVE.OPT",
+                    LOC"CONTAINERS.DELETE.OPT",
+                    "Rename"
+                } ) )
                 :SetFn( function(v)
                     if v == 2 then
                         -- Load

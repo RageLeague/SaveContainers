@@ -77,6 +77,21 @@ local function ProfilesMenu( screen )
                                 end
                             end )
                     elseif v == 5 then
+                        UIHelpers.EditString(
+                            LOC "CONTAINERS.RENAME.TITLE",
+                            LOC "CONTAINERS.RENAME.DESC",
+                            data.name or "",
+                            function( val )
+                                if val and val ~= "" and val ~= data.name then
+                                    local result = Containers.UpdateInfo(id, { name = val })
+                                    if result then
+                                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.SUCCESS", loc.format(LOC"CONTAINERS.RENAME.SUCCESS_DESC", val) ) )
+                                    else
+                                        TheGame:FE():PushScreen( Screen.InfoPopup( LOC"CONTAINERS.FAILURE", loc.format(LOC"CONTAINERS.RENAME.FAILURE_DESC") ) )
+                                    end
+                                end
+                            end
+                        )
                     end
 
                 end )

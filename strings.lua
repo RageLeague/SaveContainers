@@ -38,6 +38,11 @@ Content.AddStringTable("SAVE_CONTAINERS", {
             OPT = "Delete",
         },
         RENAME = {
+            TITLE = "Rename Container",
+            DESC = "Enter a new name for the container.",
+
+            SUCCESS_DESC = "Successfully renamed container to \"{1}\".",
+            FAILURE_DESC = "Failed to rename container.",
             OPT = "Rename",
         },
         NA = "N/A",

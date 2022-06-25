@@ -23,7 +23,7 @@ local function ProfilesMenu( screen )
     for i, id, data in sorted_pairs(Containers.ListProfiles()) do
         local tooltip = ContainerDescFn(id, data)
 
-        table.insert(t,  {txt = data.name or "", hover_text = tooltip, fn = function()
+        table.insert(t,  {txt = data.name or "", hover_text = tooltip, profile_info = data, fn = function()
             TheGame:FE():PushScreen( ContainerClass.MultiOptPopup(
                 data.name or "",
                 LOC"CONTAINERS.SELECT_CONTAINER.DESC",
@@ -97,6 +97,10 @@ local function ProfilesMenu( screen )
                 end )
         end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = ContainerClass.HoverableMenuButton })
     end
+
+    table.sort(t, function(a, b)
+        return (a.profile_info and a.profile_info.last_saved or 0) > (b.profile_info and b.profile_info.last_saved or 0)
+    end)
 
     table.insert(t,  {txt = LOC"CONTAINERS.CREATE_NEW.OPT", fn = function()
         UIHelpers.EditString(

@@ -3,7 +3,7 @@
 A mod for Griftlands that allows storing and loading of multiple profiles.
 
 Version: 0.1.0
-Workshop ID: TBD
+Workshop ID: 2826005720
 Alias(Used for mod dependency): SAVE_CONTAINERS
 Github Link: https://github.com/RageLeague/SaveContainers
 

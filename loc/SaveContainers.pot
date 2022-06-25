@@ -1,0 +1,159 @@
+﻿#: CONTAINERS.CREATE_NEW.DESC
+msgctxt "CONTAINERS.CREATE_NEW.DESC"
+msgid "Enter a name to help you identify the profile."
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.FAILURE_DESC
+msgctxt "CONTAINERS.CREATE_NEW.FAILURE_DESC"
+msgid "Failed to save container."
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.OPT
+msgctxt "CONTAINERS.CREATE_NEW.OPT"
+msgid "New Container..."
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.REQ_NAME
+msgctxt "CONTAINERS.CREATE_NEW.REQ_NAME"
+msgid "The container needs a name!"
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.SAMPLE
+msgctxt "CONTAINERS.CREATE_NEW.SAMPLE"
+msgid "New Container"
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.SUCCESS_DESC
+msgctxt "CONTAINERS.CREATE_NEW.SUCCESS_DESC"
+msgid "Container saved as \"{1}\"."
+msgstr ""
+
+#: CONTAINERS.CREATE_NEW.TITLE
+msgctxt "CONTAINERS.CREATE_NEW.TITLE"
+msgid "Name New Container"
+msgstr ""
+
+#: CONTAINERS.DELETE.DESC
+msgctxt "CONTAINERS.DELETE.DESC"
+msgid "This container will forever be deleted.\n\nAre you sure you want to delete this container?"
+msgstr ""
+
+#: CONTAINERS.DELETE.FAILURE_DESC
+msgctxt "CONTAINERS.DELETE.FAILURE_DESC"
+msgid "Failed to delete container."
+msgstr ""
+
+#: CONTAINERS.DELETE.OPT
+msgctxt "CONTAINERS.DELETE.OPT"
+msgid "Delete"
+msgstr ""
+
+#: CONTAINERS.DELETE.SUCCESS_DESC
+msgctxt "CONTAINERS.DELETE.SUCCESS_DESC"
+msgid "Successfully deleted container."
+msgstr ""
+
+#: CONTAINERS.DELETE.TITLE
+msgctxt "CONTAINERS.DELETE.TITLE"
+msgid "Confirm Delete"
+msgstr ""
+
+#: CONTAINERS.FAILURE
+msgctxt "CONTAINERS.FAILURE"
+msgid "Failure!"
+msgstr ""
+
+#: CONTAINERS.LOAD.DESC
+msgctxt "CONTAINERS.LOAD.DESC"
+msgid "Your current profile will forever be lost if you haven't saved it yet. Additionally, once the container is loaded, the game will be reset.\n\nAre you sure you want to load this container?"
+msgstr ""
+
+#: CONTAINERS.LOAD.FAILURE_DESC
+msgctxt "CONTAINERS.LOAD.FAILURE_DESC"
+msgid "Failed to load container."
+msgstr ""
+
+#: CONTAINERS.LOAD.OPT
+msgctxt "CONTAINERS.LOAD.OPT"
+msgid "Load"
+msgstr ""
+
+#: CONTAINERS.LOAD.TITLE
+msgctxt "CONTAINERS.LOAD.TITLE"
+msgid "Confirm Load"
+msgstr ""
+
+#: CONTAINERS.MANAGE_CONTAINERS
+msgctxt "CONTAINERS.MANAGE_CONTAINERS"
+msgid "Manage Containers"
+msgstr ""
+
+#: CONTAINERS.NA
+msgctxt "CONTAINERS.NA"
+msgid "N/A"
+msgstr ""
+
+#: CONTAINERS.RENAME.DESC
+msgctxt "CONTAINERS.RENAME.DESC"
+msgid "Enter a new name for the container."
+msgstr ""
+
+#: CONTAINERS.RENAME.FAILURE_DESC
+msgctxt "CONTAINERS.RENAME.FAILURE_DESC"
+msgid "Failed to rename container."
+msgstr ""
+
+#: CONTAINERS.RENAME.OPT
+msgctxt "CONTAINERS.RENAME.OPT"
+msgid "Rename"
+msgstr ""
+
+#: CONTAINERS.RENAME.SUCCESS_DESC
+msgctxt "CONTAINERS.RENAME.SUCCESS_DESC"
+msgid "Successfully renamed container to \"{1}\"."
+msgstr ""
+
+#: CONTAINERS.RENAME.TITLE
+msgctxt "CONTAINERS.RENAME.TITLE"
+msgid "Rename Container"
+msgstr ""
+
+#: CONTAINERS.SAVE.DESC
+msgctxt "CONTAINERS.SAVE.DESC"
+msgid "The old container will be overwritten.\n\nAre you sure you want to save this container?"
+msgstr ""
+
+#: CONTAINERS.SAVE.FAILURE_DESC
+msgctxt "CONTAINERS.SAVE.FAILURE_DESC"
+msgid "Failed to update container."
+msgstr ""
+
+#: CONTAINERS.SAVE.OPT
+msgctxt "CONTAINERS.SAVE.OPT"
+msgid "Save"
+msgstr ""
+
+#: CONTAINERS.SAVE.SUCCESS_DESC
+msgctxt "CONTAINERS.SAVE.SUCCESS_DESC"
+msgid "Successfully updated container."
+msgstr ""
+
+#: CONTAINERS.SAVE.TITLE
+msgctxt "CONTAINERS.SAVE.TITLE"
+msgid "Confirm Delete"
+msgstr ""
+
+#: CONTAINERS.SELECT_CONTAINER.DESC
+msgctxt "CONTAINERS.SELECT_CONTAINER.DESC"
+msgid "What would you like to do with it?"
+msgstr ""
+
+#: CONTAINERS.SELECT_CONTAINER.TOOLTIP
+msgctxt "CONTAINERS.SELECT_CONTAINER.TOOLTIP"
+msgid "Created on: %s\n\nUpdated on: %s\n\nTotal runs: %d"
+msgstr ""
+
+#: CONTAINERS.SUCCESS
+msgctxt "CONTAINERS.SUCCESS"
+msgid "Success!"
+msgstr ""

@@ -24,4 +24,5 @@ return {
 
     title = "Save Containers",
     description = "Allows you to create multiple profiles.",
+    previewImagePath = "preview.png",
 }

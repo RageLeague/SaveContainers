@@ -95,7 +95,7 @@ local function ProfilesMenu( screen )
                     end
 
                 end )
-        end, icon = engine.asset.Texture("UI/ic_mainmenu_history.tex"), buttonclass = ContainerClass.HoverableMenuButton })
+        end, icon = engine.asset.Texture("UI/ic_mainmenu_updates.tex"), buttonclass = ContainerClass.HoverableMenuButton })
     end
 
     table.sort(t, function(a, b)
@@ -140,7 +140,7 @@ function MainMenu:init(...)
     local did_injection = false
     MainMenu.ShouldSkipExternalLinks = function(self, ...)
         if not did_injection and self.link_buttons then
-            self.profiles_link = self.link_buttons:AddChild( Widget.MainMenuButton( engine.asset.Texture("UI/ic_mainmenu_experimental.tex"), LOC"CONTAINERS.MANAGE_CONTAINERS", function()
+            self.profiles_link = self.link_buttons:AddChild( Widget.MainMenuButton( engine.asset.Texture("UI/ic_mainmenu_updates.tex"), LOC"CONTAINERS.MANAGE_CONTAINERS", function()
                 if self:GetCurrentMenu() ~= ProfilesMenu then
                     if not self:IsMenuStart() then self:PopMenu() end
                     self:PushMenu( ProfilesMenu )

@@ -6,6 +6,7 @@ function Containers.ListProfiles()
     for k, filename in ipairs( filepath.list_files( constructed_path, "info.lua", true )) do
         local id = filename:match( "([^/]+)/info[.]lua$" )
         local name = filename:match( "(.+)[.]lua$" )
+        package.loaded[ name ] = nil
         local ok, result = xpcall( require, generic_error, name )
         print(name)
         -- table.insert(paths, name)

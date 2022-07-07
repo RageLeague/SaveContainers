@@ -3,6 +3,7 @@ local MainMenu = Screen.MainMenu
 local old_init_menu = MainMenu.init
 
 local function ContainerDescFn(id, data)
+    package.loaded[ Containers.path .. Containers.folder .. "/" .. id .. "/run_history" ] = nil
     local ok, result = pcall( require, Containers.path .. Containers.folder .. "/" .. id .. "/run_history" )
     local run_history, run_count
     if ok then
@@ -32,7 +33,7 @@ local function ProfilesMenu( screen )
                     LOC"CONTAINERS.LOAD.OPT",
                     LOC"CONTAINERS.SAVE.OPT",
                     LOC"CONTAINERS.DELETE.OPT",
-                    "Rename"
+                    LOC"CONTAINERS.RENAME.OPT"
                 } ) )
                 :SetFn( function(v)
                     if v == 2 then

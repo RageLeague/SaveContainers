@@ -16,7 +16,9 @@ function Containers.SaveCurrentProfile(id, forced_save, data)
         return false
     end
     if exists then
-        local ok, result = xpcall( require, generic_error, string.format("%s%s/%s/info", Containers.path, Containers.folder, id) )
+        local info_filepath = string.format("%s%s/%s/info", Containers.path, Containers.folder, id)
+        package.loaded[ info_filepath ] = nil
+        local ok, result = xpcall( require, generic_error, info_filepath )
         if not ok then
             print(result)
             info = {

@@ -2,14 +2,14 @@
 
 A mod for Griftlands that allows storing and loading of multiple profiles.
 
-Version: 0.1.0
+Version: 0.2.0
 Workshop ID: 2826005720
-Alias(Used for mod dependency): SAVE_CONTAINERS
+Alias(Used for mod dependency): SAVECONTAINERS
 Github Link: https://github.com/RageLeague/SaveContainers
 
 Author: RageLeague
 
-Supported Languages: English.
+Supported Languages: English, 简体中文.
 
 Supported Systems: Windows, MacOS(?), Linux(?).
 
@@ -47,3 +47,4 @@ You can directly install mods from steam workshop. You can read about it at http
 
 * Clear cache for profile info so that the information displayed is updated.
 * Made "Rename" localizable.
+* Change alias to "SAVECONTAINER" from "SAVE_CONTAINER" to make the localization files load correctly.

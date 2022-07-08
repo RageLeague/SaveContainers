@@ -2,10 +2,10 @@ local filepath = require "util/filepath"
 
 local function OnLoad( mod )
     rawset(_G, "CURRENT_MOD_ID", mod.id)
-    require "SAVE_CONTAINERS:strings"
-    require "SAVE_CONTAINERS:api"
+    require "SAVECONTAINERS:strings"
+    require "SAVECONTAINERS:api"
 
-    for k, filepath in ipairs( filepath.list_files( "SAVE_CONTAINERS:ui/", "*.lua", true )) do
+    for k, filepath in ipairs( filepath.list_files( "SAVECONTAINERS:ui/", "*.lua", true )) do
         local name = filepath:match( "(.+)[.]lua$" )
         -- print(name)
         if name then
@@ -16,7 +16,7 @@ local function OnLoad( mod )
 end
 
 local function OnPreLoad()
-    for k, filepath in ipairs( filepath.list_files( "SAVE_CONTAINERS:loc", "*.po", true )) do
+    for k, filepath in ipairs( filepath.list_files( "SAVECONTAINERS:loc", "*.po", true )) do
         local name = filepath:match( "(.+)[.]po$" )
         local lang_id = name:match("([_%w]+)$")
         lang_id = lang_id:gsub("_", "-")
@@ -32,7 +32,7 @@ end
 
 return {
     version = "0.2.0",
-    alias = "SAVE_CONTAINERS",
+    alias = "SAVECONTAINERS",
 
     OnPreLoad = OnPreLoad,
     OnLoad = OnLoad,

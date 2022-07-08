@@ -1,4 +1,4 @@
-Content.AddStringTable("SAVE_CONTAINERS", {
+Content.AddStringTable("SAVECONTAINERS", {
     CONTAINERS = {
         CREATE_NEW = {
             OPT = "New Container...",

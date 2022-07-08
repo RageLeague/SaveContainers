@@ -41,7 +41,7 @@ function Containers.GetSavableFiles(root)
     return files
 end
 
-for k, filepath in ipairs( filepath.list_files( "SAVE_CONTAINERS:api/", "*.lua", true )) do
+for k, filepath in ipairs( filepath.list_files( "SAVECONTAINERS:api/", "*.lua", true )) do
     local name = filepath:match( "(.+)[.]lua$" )
     -- print(name)
     if name then

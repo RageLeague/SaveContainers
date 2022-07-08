@@ -40,3 +40,10 @@ You can directly install mods from steam workshop. You can read about it at http
 1. Subscribe this item.
 2. Enable it in-game.
 3. Volia!
+
+## Changelog
+
+### 0.2.0
+
+* Clear cache for profile info so that the information displayed is updated.
+* Made "Rename" localizable.

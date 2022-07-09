@@ -48,3 +48,4 @@ You can directly install mods from steam workshop. You can read about it at http
 * Clear cache for profile info so that the information displayed is updated.
 * Made "Rename" localizable.
 * Change alias to "SAVECONTAINER" from "SAVE_CONTAINER" to make the localization files load correctly.
+* Added Chinese (Simplified) localization.

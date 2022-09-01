@@ -1,4 +1,5 @@
 function Containers.CopyProfile(copy_address, target_address)
+    Containers.ClearCurrentProfile(target_address)
     local save_paths = Containers.GetSavableFiles(copy_address)
     for i, path in ipairs(save_paths) do
         local load_path = Containers.path .. copy_address .. path

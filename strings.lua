@@ -22,7 +22,7 @@ Content.AddStringTable("SAVECONTAINERS", {
             OPT = "Load",
         },
         SAVE = {
-            TITLE = "Confirm Delete",
+            TITLE = "Confirm Save",
             DESC = "The old container will be overwritten.\n\nAre you sure you want to save this container?",
 
             SUCCESS_DESC = "Successfully updated container.",

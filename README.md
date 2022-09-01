@@ -2,7 +2,7 @@
 
 A mod for Griftlands that allows storing and loading of multiple profiles.
 
-Version: 0.2.0
+Version: 0.2.1
 Workshop ID: 2826005720
 Alias(Used for mod dependency): SAVECONTAINERS
 Github Link: https://github.com/RageLeague/SaveContainers
@@ -42,6 +42,11 @@ You can directly install mods from steam workshop. You can read about it at http
 3. Volia!
 
 ## Changelog
+
+### 0.2.1
+
+* Fixed incorrect confirm save string.
+* Profile of target properly clears when saving or loading (so save files are removed correctly).
 
 ### 0.2.0
 
